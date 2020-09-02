@@ -1,0 +1,74 @@
+//Main Function
+---------------
+-Item Management
+    -Brand / Category / Subcategory
+-Sell / Shopping
+
+-Order Management
+    -Items / Customers 
+    -orders / order detail
+    -order
+       voucherid,user_id,order_date,status
+    -order detail
+      voucherid,pro_id,qty
+
+      brands
+        -1 | b1 | photo
+
+      categories
+         -1 | fashion | photo
+
+
+      subcategory
+         -1 | baby wear | photo
+
+
+-Customer Management
+    -Reports
+
+-Model Relatiionship
+--------------------
+  -One-to-One
+      -hasOne (p)
+      -belongsTo (c)
+  -One-to-Many
+      -hasMany (p)
+      -belongsTo (c)
+  -Many-to-Many
+      -belongsToMany 
+      -pivot table (two table id)
+
+
+
+Item(CRUD)
+----------
+create - show from , store data
+retrieve - display data (all , row)
+update - show form with old value
+delete -delete data
+
+Authentication
+---------------
+-installation
+-nodejs (call npm in termial)
+-Docs
+  -Security / Authtication
+-Commands
+  -composer require laravel / ui
+  -php artisan ui bootstrap --auth
+  -npm install
+  -npm run dev
+-Routes
+  -localhost:8000/login
+  -localhost:8000/register
+
+
+GIT
+----
+-git init
+-git add
+-git commit -m "message"
+-git remote add origin url
+-git push -u origin master
+
+-git pull

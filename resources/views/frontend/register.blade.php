@@ -11,7 +11,8 @@
 
 		<div class="row justify-content-center">
 			<div class="col-8">
-				<form action="signin" method="POST">
+				<form method="POST" action="{{ route('register') }}">
+          @csrf
 		      		<div class="form-row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -43,7 +44,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                               <label class="small mb-1" for="inputConfirmPassword">Confirm Password</label>
-                              <input class="form-control py-4" id="inputConfirmPassword" type="password" placeholder="Confirm password" />
+                              <input class="form-control py-4" id="inputConfirmPassword" type="password" placeholder="Confirm password" name="password_confirmation" />
                               <font id="cerror" color="red"></font>
 
                             </div>

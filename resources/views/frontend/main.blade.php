@@ -112,6 +112,7 @@
 				<div class="MultiCarousel-inner">
 					@foreach($items as $item)
 					<div class="item">
+						<a href="{{route('detailpage',$item->id)}}">
 						<div class="pad15">
 							<img src="{{$item->photo}}" class="img-fluid">
 							<p class="text-truncate">{{$item->name}}</p>
@@ -140,7 +141,9 @@
 							Add To Cart</button>
 
 						</div>
+						</a>
 					</div>
+
 					@endforeach
 				</div>
 				<button class="btn btnMain leftLst"><</button>
@@ -157,59 +160,16 @@
 
 	<!-- Brand Store Item -->
 	<section class="customer-logos slider mt-5">
+		@foreach($brands as $brand)
 		<div class="slide">
-			<a href="">
-				<img src="{{ asset('front/image/brand/loacker_logo.jpg')}}">
-			</a>
-		</div>
+			<a href="{{route('brandpage',$brand->id)}}">
+			
+				{{-- <p>{{$brand->name}}</p> --}}
+				<img src="{{$brand->photo}}" class="img-fluid">
+				</a>
 
-		<div class="slide">
-			<a href="">
-				<img src="{{ asset('front/image/brand/lockandlock_logo.png')}}">
-			</a>
 		</div>
-
-		<div class="slide">
-			<a href="">
-				<img src="{{ asset('front/image/brand/apple_logo.png')}}">
-			</a>
-		</div>
-
-		<div class="slide">
-			<a href="">
-				<img src="{{ asset('front/image/brand/giordano_logo.png')}}">
-			</a>
-		</div>
-
-		<div class="slide">
-			<a href="">
-				<img src="{{ asset('front/image/brand/saisai_logo.png')}}">
-			</a>
-		</div>
-
-		<div class="slide">
-			<a href="">
-				<img src="{{ asset('front/image/brand/brands_logo.png')}}">
-			</a>	
-		</div>
-
-		<div class="slide">
-			<a href="">
-				<img src="{{ asset('front/image/brand/acer_logo.png')}}">
-			</a>
-		</div>
-
-		<div class="slide">
-			<a href="">
-				<img src="{{ asset('front/image/brand/bella_logo.png')}}">
-			</a>
-		</div>
-
-		<div class="slide">
-			<a href="">
-				<img src="{{ asset('front/image/brand/ariel_logo.png')}}">
-			</a>
-		</div>
+		@endforeach
 	</section>
 
 	<div class="whitespace d-xl-block d-lg-block d-md-none d-sm-none d-none"></div>

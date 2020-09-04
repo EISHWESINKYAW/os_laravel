@@ -29,7 +29,11 @@
 						<td><img src="{{$category->photo}}" class="img-fluid w-25"></td>
 						<td>
 						<a href="{{route('categories.edit',$category->id)}}" class="btn btn-warning">Edit</a>
-						<a href="" class="btn btn-danger">Delete</a>
+						<form method="post" action="{{route('categories.destroy',$category->id)}}" onsubmit="return confirm('Are You Sure?')">
+							@csrf
+							@method('DELETE')
+							<button class="btn btn-danger" type="submit">Delete</button>
+						</form>
 						</td>
 					</tr>
 					@endforeach

@@ -1,12 +1,26 @@
 @extends('backendtemplate')
 @section('mainsection')
+<div class="container-fluid">
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
 		<h1 class="h3 mb-0 text-gray-800 text-center">Order List</h1>
-		<a href="" class="btn btn-info"></a>
 	</div>
-<div class="container">
+
 	<div class="row">
 		<div class="col-md-12">
+			 <form method="get" action="{{route('orders.index')}}" class="mt-2">
+          <div class="form-row">
+            <div class="col">
+              <input type="date" class="form-control" placeholder="Start Date" name="sdate">
+            </div>
+            <div class="col">
+              <input type="date" class="form-control" placeholder="End Date" name="edate">
+            </div>
+            <div class="col">
+              <input type="submit" class="btn btn-success" value="Search">
+            </div>
+          </div>
+        </form>
+        <br>
 			<table class="table table-bordered">
 				<thead>
 					<tr class="bg-dark text-light">

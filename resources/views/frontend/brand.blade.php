@@ -10,41 +10,31 @@
 <div class="container mt-5">
 
 
-	<div class="row mt-5">
-		<div class="col">
-			<div class="bbb_viewed_title_container">
-				<h3 class="bbb_viewed_title"> Brand Category Name  </h3>
-				<div class="bbb_viewed_nav_container">
-					<div class="bbb_viewed_nav bbb_viewed_prev"><i class="icofont-rounded-left"></i></div>
-					<div class="bbb_viewed_nav bbb_viewed_next"><i class="icofont-rounded-right"></i></div>
-				</div>
-			</div>
-			<div class="bbb_viewed_slider_container">
-				<div class="owl-carousel owl-theme bbb_viewed_slider">
-					
-					<div class="owl-item">
-						<div class="bbb_viewed_item discount d-flex flex-column align-items-center justify-content-center text-center">
-							@foreach($brand->items as $item)
-							<div class="pad15">
+	<div class="row">
+		<div class="col-12">
+			<div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
+				<div class="MultiCarousel-inner">
+					@foreach($brand->items as $item)
+					<div class="item">
+						<div class="pad15">
+							<img src="{{ asset($item->photo)}}"width="120" height="100">
+							<p class="text-truncate">{{$item->name}}</p>
+							<p class="item-price">
+								<span class="d-block">{{$item->price}}</span>
+								{{-- <span class="d-block">Discount : {{$item->discount}}%</span> --}}
+							</p>
 
-								<img src="{{ asset($item->photo)}}" class="img-fluid">
-								<p class="text-truncate">{{$item->name}}</p>
-								<p class="item-price">
-									
-									<span class="d-block">{{$item->price}}Ks </span>
-								</p>
+							<div class="star-rating">
+								<ul class="list-inline">
+									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+									<li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+								</ul>
+							</div>
 
-								<div class="star-rating">
-									<ul class="list-inline">
-										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-										<li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
-									</ul>
-								</div>
-
-								<a href="#"
+							<a href="#"
 								class="addtocartBtn text-decoration-none add_to_cart"
 							data-id="{{$item->id}}"
 							data-name="{{$item->name}}"
@@ -54,18 +44,19 @@
 							>
 							Add To Cart</a>
 
-							</div>
-							@endforeach
 						</div>
+						</a>
 					</div>
-					
 
+					@endforeach
 				</div>
-			</div>
+				<button class="btn btnMain leftLst"><</button>
+		            <button class="btn btnMain rightLst">></button>
+			</div>		
 		</div>
 	</div>
 
-	<div class="row mt-5">
+	{{-- <div class="row mt-5">
 		<div class="col">
 			<div class="bbb_viewed_title_container">
 				<h3 class="bbb_viewed_title"> Brand Category  </h3>
@@ -387,7 +378,9 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 
 </div>
 @endsection
+
+

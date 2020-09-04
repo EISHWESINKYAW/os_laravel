@@ -102,7 +102,7 @@
 
 	<!-- Discount Item -->
 	<div class="row mt-5">
-		<h1> Discount Item </h1>
+		<h1>All Item </h1>
 	</div>
 
 	<!-- Disocunt Item -->
@@ -114,11 +114,12 @@
 					<div class="item">
 						<a href="{{route('detailpage',$item->id)}}">
 						<div class="pad15">
-							<img src="{{$item->photo}}" class="img-fluid">
+							<img src="{{$item->photo}}" width="120" height="100">
 							<p class="text-truncate">{{$item->name}}</p>
+							</a>
 							<p class="item-price">
 								<span class="d-block">{{$item->price}}</span>
-								<span class="d-block">{{$item->discount}}</span>
+								<span class="d-block">Discount : {{$item->discount}}%</span>
 							</p>
 
 							<div class="star-rating">
@@ -141,7 +142,6 @@
 							Add To Cart</button>
 
 						</div>
-						</a>
 					</div>
 
 					@endforeach

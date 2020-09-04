@@ -55,7 +55,7 @@
 					@foreach($subcategory->items as $item)
 					<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
 						<div class="card pad15 mb-3">
-						  	<img src="{{ asset($item->photo)}}" class="card-img-top" alt="...">
+						  	<img src="{{ asset($item->photo)}}" width="120" height="100" alt="...">
 						  	
 						  	<div class="card-body text-center">
 						    	<h5 class="card-title text-truncate">{{$item->name}}</h5>
